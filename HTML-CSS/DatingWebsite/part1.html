@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+	<h1>Please Enter Your Details For Our Dating Website!</h1>
+	<form action = "https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method = "post" enctype = "multipart/form-data">
+		<fieldset>
+			<legend>Your Face</legend>
+			<label for = "avatar">Your image:</label>
+			<input type = "file" id = "avatar" name = "avatar" required><br>
+			
+			<label for = "preview">Image preview:</label>
+			<img id ="preview">
+		</fieldset>
+		
+		<fieldset>
+			<legend>Your general details</legend>
+			
+			<label for = "name">Name:</label>
+			<input type = "text" id = "name" name = "userName" required><br>
+			
+			<label for = "gender">Gender:</label> 
+			<input type="radio" id = "gender" value = "male" name = "gender" required> Male
+			<input type="radio" id = "gender" value = "female" name = "gender" required> Female<br>
+			
+			<label for = "age">Age:</label> 
+			<input type = "number" id = "age" name = "age" required><br>
+			
+			<label for = "dob">Date of Birth:</label> 
+			<input type = "date" id = "dob" name = "dob"><br>
+
+			<label for = "favColor">Favorite Color:</label> 
+			<input type = "color" id = "favColor" name = "favColor"><br>
+			
+			<label for = "whichCountry">Which Country:</label>
+			<select id = "whichCountry" name = "whichCountry">
+				<option value = "noCountry"></option>
+				<option value = "United Kingdom">United Kingdom</option>
+				<option value = "India">India</option>
+				<option value = "Spain">Spain</option>
+				<option value = "France">France</option>
+				<option value = "Italy">Italy</option>
+			</select>
+		</fieldset>
+
+		<fieldset>
+			<legend>Your Indicators</legend>
+			<label for = "height">Height:</label> 
+			<span class = "leftLabel">Short</span><input type = "range" class = "test" id = "height" min = "0" max = "100" name = "height" value = "50"><span class = "rightLabel">Tall</span><br>
+
+			<label for = "salary">Salary:</label>
+			<span class = "leftLabel">Poor</span><input type = "range" class = "test1" id = "salary" min = "0" max = "100" name = "salary" value = "50"><span class = "rightLabel">Rich</span><br>
+		</fieldset>
+		
+		<fieldset>
+			<legend>Your Contact Information</legend>
+			<label for = "email">Email:</label>  
+			<input type = "email" id = "email" name = "email" required><br>
+			
+			<label for = "mobile">Mobile:</label> 
+			<input type = "tel" id = "mobile" name = "mobile"><br>			
+			
+			<label for = "address">Address:</label>
+			<textarea id = "address" name = "address"></textarea><br>
+			
+			<label for = "methodToContact">Method to contact you:</label> 
+			<input type = "checkbox" id = "methodToContact" name = "methodToContact1" value = "email"> Email
+			<input type = "checkbox" id = "methodToContact" name = "methodToContact2" value = "whatsapp"> Whatsapp
+			<input type = "checkbox" id = "methodToContact" name = "methodToContact3" value = "inAppChat"> In-App Chat
+		</fieldset>
+		<br><input type = "submit">
+	</form>
+</body>
+</html>
