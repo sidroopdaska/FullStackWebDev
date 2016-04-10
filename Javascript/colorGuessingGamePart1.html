@@ -6,17 +6,20 @@
 <body onload = "startGame()">
 
 	<script>
-
+		// initialise global variables
 		var colorArr = ["violet", "indigo", "blue", "green", "yellow", "orange", "red", "black", "pink", "grey"];
 		var finished = false;
 		var numberOfGuesses = 0;
 
 		function startGame(){
-			
+			// sort the colors array alphabetically 
 			colorArr = colorArr.sort();
-			var targetIdx = Math.floor(Math.random() * colorArr.length);
-			var targetColor = colorArr[targetIdx];
 
+			// randomly obtain an index with range [0, colorArr.length)
+			var targetIdx = Math.floor(Math.random() * colorArr.length);
+			// obtain the color to be guessed by the user based on the random number generated above
+			var targetColor = colorArr[targetIdx];
+			// display for debugging purposes
 			alert("The target color is : " + targetColor);
 
 			while(!finished){
@@ -24,6 +27,7 @@
 									"\n\nWhat color am i thinking of?");
 
 				numberOfGuesses += 1;
+				// using ternary operators for making the code more compact.
 				(guess != targetColor) ? finished = false : finished = true;
 
 			}

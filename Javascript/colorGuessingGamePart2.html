@@ -6,17 +6,23 @@
 <body onload = "startGame()">
 
 	<script>
-
+		// initialise global variables
 		var colorArr = ["violet", "indigo", "blue", "green", "yellow", "orange", "red", "black", "pink", "grey"];
 		var finished = false;
 		var numberOfGuesses = 0;
 
 		function startGame(){
-			
+
+			// sort the colors array alphabetically 			
 			colorArr = colorArr.sort();
+
+			// randomly obtain an index with range [0, colorArr.length)
 			var targetIdx = Math.floor(Math.random() * colorArr.length);
+
+			// obtain the color to be guessed by the user based on the random number generated above
 			var targetColor = colorArr[targetIdx];
 
+			// display for debugging purposes
 			alert("The target color is : " + targetColor);
 
 			while(!finished){
@@ -27,10 +33,12 @@
 				finished = checkGuess(guess, targetColor);
 
 			}
+			//change the web page background color to the target color value
 			document.body.style.background = guess;
 			alert("Correct! You got the color in " + numberOfGuesses + " guesses!");
 		}
 
+		// function for checking whether the users guess is correct or not.
 		function checkGuess(guess, targetColor){
 		 	if (colorArr.indexOf(guess) == -1){
 		 		alert("Sorry! I don't recognise that color. Please try again.");
