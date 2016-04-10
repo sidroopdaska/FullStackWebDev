@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Color Guessing Game Part 1</title>
+</head>
+<body onload = "startGame()">
+
+	<script>
+
+		var colorArr = ["violet", "indigo", "blue", "green", "yellow", "orange", "red", "black", "pink", "grey"];
+		var finished = false;
+		var numberOfGuesses = 0;
+
+		function startGame(){
+			
+			colorArr = colorArr.sort();
+			var targetIdx = Math.floor(Math.random() * colorArr.length);
+			var targetColor = colorArr[targetIdx];
+
+			alert("The target color is : " + targetColor);
+
+			while(!finished){
+				var guess = prompt("I am thinking of one of these colors: \n\n" + colorArr + 
+									"\n\nWhat color am i thinking of?");
+
+				numberOfGuesses += 1;
+				(guess != targetColor) ? finished = false : finished = true;
+
+			}
+
+			alert("Correct! You got the color in " + numberOfGuesses + " guesses!");
+		}
+	</script>
+</body>
+</html>
