@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Code to test Locating Nodes methods</title>
+</head>
+<body>
+	<h2 style = "color: black" id = "myHeader"> Click on the buttons below to change this text! </h2>
+	<form>
+		<input type = "button" onclick = "changeColor1()" value = "changeColor1">
+		<input type = "button" onclick = "changeColor2()" value = "changeColor2">
+		<input type = "button" onclick = "changeColor3()" value = "changeColor3">
+	</form>
+
+	<script type="text/javascript">
+		function changeColor1(){
+			//alert(document.childNodes[1].childNodes[2].childNodes[1]);
+			document.childNodes[1].childNodes[2].childNodes[1].style.color = "pink";
+		}
+		
+		function changeColor2(){
+			document.getElementsByTagName("h2")[0].style.color = "green";
+		}
+
+		function changeColor3(){
+			document.getElementById("myHeader").style.color = "blue";
+		}
+
+	</script>
+</body>
+</html>>
