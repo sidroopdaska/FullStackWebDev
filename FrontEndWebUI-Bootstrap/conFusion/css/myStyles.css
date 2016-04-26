@@ -28,3 +28,7 @@ address {
     margin: 0px;
     color: #0f0f0f;
 }
+
+.navbar-default {
+    margin: 0px auto;
+}
