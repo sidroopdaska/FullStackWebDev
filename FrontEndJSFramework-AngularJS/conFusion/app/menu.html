@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app> <!-- configuring the Angular Application i.e. configured the web page to become an Angular application-->
 
 <head>
      <meta charset="utf-8">
@@ -45,7 +45,10 @@
                     </div>
                     <div class="media-body">
                         <h2 class="media-heading">{{dish.name}} <span class="label label-danger label-xs">{{dish.label}}</span> <span class="badge">{{dish.price | currency}}</span></h2>
+                        <!-- Above- I'm piping the dish.price through a currency filter -->
                         <p>{{dish.description}}</p>
+                        <p>Comment: {{dish.comment}}</p>
+                        <p>Type your comment: <input type="text" ng-model="dish.comment"></p>
                     </div>
                 </div>
             </div>
