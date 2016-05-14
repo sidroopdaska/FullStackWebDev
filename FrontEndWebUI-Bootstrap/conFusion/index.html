@@ -59,7 +59,7 @@
                     <li><a href= "contactus.html"><i class="fa fa-envelope-o"></i> Contact</a></li>
                 </ul> <!-- end of navbar items -->
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li><a id="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 </ul>
             </div> <!-- end of navbar content for responsive toggle button-->
         </div> <!-- end of container -->   
@@ -112,7 +112,7 @@
                 </div>
                 <div class="col-xs-12 col-sm-2">
                     <p style="padding:40px;"></p>
-                    <a type="button" class="btn btn-warning btn-sm btn-block" data-toggle="modal" data-target="#reserveTableModal">Reserve Table</a></button>
+                    <a type="button" class="btn btn-warning btn-sm btn-block" id="reserveTableBtn">Reserve Table</a></button>
                 </div>
             </div>
         </div>
@@ -429,6 +429,7 @@
         $(document).ready(function(){
             $("#myCarousel").carousel({interval: 2000} );
         });  
+        
         $("#carousel-pause").click(function(){
             $("#myCarousel").carousel('pause');
         });
@@ -436,7 +437,14 @@
         $("#carousel-play").click(function(){
             $("#myCarousel").carousel('cycle');
         });
-      
+        
+        $("#login").click(function(){
+           $("#loginModal").modal('show'); 
+        });
+        
+        $("#reserveTableBtn").click(function(){
+           $("#reserveTableModal").modal("show"); 
+        });
     </script>
 </body>
 </html>
