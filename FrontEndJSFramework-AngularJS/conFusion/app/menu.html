@@ -24,24 +24,29 @@
 </head>
 
 <body>
-    <!-- used ng-init directive to host some application data -->
     <div class="container">
         <div class="row row-content" ng-controller="menuController as menuCtrl">
             <div class="col-xs-12">
-                <ul class="media-list">
-                    <li class="media" ng-repeat="dish in menuCtrl.dishes">
-                        <div class="media-left media-middle">
-                            <a href="#"><img src="{{dish.image}}" class="media-object media-thumbnail" alt="{{dish.name}}"></a>
-                        </div>
-                        <div class="media-body">
-                            <h2 class="media-heading">{{dish.name}} <span class="label label-danger label-xs">{{dish.label}}</span> <span class="badge">{{dish.price | currency}}</span></h2>
-                            <!-- Above- I'm piping the dish.price through a currency filter -->
-                            <p>{{dish.description}}</p>
-                            <p>Comment: {{dish.comment}}</p>
-                            <p>Type your comment: <input type="text" ng-model="dish.comment"></p>
-                        </div>
-                    </li>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" ng-class="{active:menuCtrl.isSelected(1)}"><a ng-click="menuCtrl.select(1)" role="tab">The Menu</a></li>
+                    <li role="presentation" ng-class="{active:menuCtrl.isSelected(2)}"><a ng-click="menuCtrl.select(2)" role="tab">Appetizers</a></li>
+                    <li role="presentation" ng-class="{active:menuCtrl.isSelected(3)}"><a ng-click="menuCtrl.select(3)" role="tab">Mains</a></li>
+                    <li role="presentation" ng-class="{active:menuCtrl.isSelected(4)}"><a ng-click="menuCtrl.select(4)" role="tab">Desserts</a></li>
                 </ul>
+                <div class="tab-content">
+                    <ul class="media-list tab-pane fade in active">
+                        <li class="media" ng-repeat="dish in menuCtrl.dishes">
+                            <div class="media-left media-middle">
+                                <a href="#"><img src="{{dish.image}}" class="media-object media-thumbnail" alt="{{dish.name}}"></a>
+                            </div>
+                            <div class="media-body">
+                                <h2 class="media-heading">{{dish.name}} <span class="label label-danger label-xs">{{dish.label}}</span> <span class="badge">{{dish.price | currency}}</span></h2>
+                                <!-- Above- I'm piping the dish.price through a currency filter -->
+                                <p>{{dish.description}}</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -88,6 +93,16 @@
                         }
                     ];
             this.dishes = dishes;
+            this.tab = 1;
+            
+            this.select = function(setTab){
+                
+                this.tab = setTab;
+            }
+            
+            this.isSelected = function (checkTab){
+              return (this.tab == checkTab);  
+            };
             
         });
     </script>
